@@ -1,0 +1,43 @@
+﻿Сборка начата 12.12.2015 19:05:13.
+     1>Проект "C:\lab4\lab4\lab4.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\VS\VC\bin\x86_amd64\CL.exe /c /I"C:\SFML-Visual_Studio2015RCx32\include" /ZI /nologo /W3 /WX- /sdl /Od /D SFML_DYNAMIC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt draw_text.cpp main.cpp
+         main.cpp
+     1>c:\lab4\lab4\main.cpp(30): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(66): warning C4267: =: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(96): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(97): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(153): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(193): warning C4305: инициализация: усечение из "double" к "float"
+     1>c:\lab4\lab4\main.cpp(214): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(334): warning C4551: в вызове функции отсутствует список аргументов
+     1>c:\lab4\lab4\main.cpp(349): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(350): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(357): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(358): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(359): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(369): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(370): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(375): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(376): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(376): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(434): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(477): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(478): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(495): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+         draw_text.cpp
+     1>c:\lab4\lab4\draw_text.cpp(23): warning C4244: =: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_text.cpp(26): warning C4244: =: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_text.cpp(46): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_text.cpp(73): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_text.cpp(85): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\VS\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\lab4\x64\Debug\lab4.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SFML-Visual_Studio2015RCx32\lib" "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\lab4\x64\Debug\lab4.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\lab4\x64\Debug\lab4.lib" /MACHINE:X64 x64\Debug\draw_text.obj
+         x64\Debug\main.obj
+     1>sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: тип компьютера модуля "X86" противоречит типу целевого компьютера "x64"
+     1>Сборка проекта "C:\lab4\lab4\lab4.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:01.77

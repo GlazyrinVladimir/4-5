@@ -1,0 +1,15 @@
+﻿Сборка начата 12.12.2015 19:01:53.
+     1>Проект "C:\lab4\lab4\lab4.vcxproj" в узле 2 (целевые объекты Build).
+     1>Link:
+         C:\Program Files (x86)\VS\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\lab4\Release\lab4.exe" /NOLOGO /LIBPATH:"C:\SFML-Visual_Studio2015RCx32\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\lab4\Release\lab4.pdb" /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\lab4\Release\lab4.lib" /MACHINE:X86 /SAFESEH Release\draw_text.obj
+         Release\main.obj
+     1>draw_text.obj : error LNK2019: ссылка на неразрешенный внешний символ __imp___invalid_parameter в функции "char * __cdecl std::_Allocate<char>(unsigned int,char *,bool)" (??$_Allocate@D@std@@YAPADIPAD_N@Z)
+     1>main.obj : error LNK2001: неразрешенный внешний символ "__imp___invalid_parameter"
+     1>draw_text.obj : error LNK2019: ссылка на неразрешенный внешний символ __imp___CrtDbgReportW в функции "char * __cdecl std::_Allocate<char>(unsigned int,char *,bool)" (??$_Allocate@D@std@@YAPADIPAD_N@Z)
+     1>main.obj : error LNK2001: неразрешенный внешний символ "__imp___CrtDbgReportW"
+     1>C:\lab4\Release\lab4.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
+     1>Сборка проекта "C:\lab4\lab4\lab4.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:00.13
