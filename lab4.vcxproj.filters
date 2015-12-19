@@ -29,5 +29,8 @@
     <ClInclude Include="draw_viewer.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="dirent.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

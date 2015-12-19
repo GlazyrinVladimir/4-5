@@ -5,8 +5,11 @@
 #include <sstream>
 #include "init_struct.h"
 #include "draw_viewer.h"
+#include <sys/types.h>
+#include <cassert>   
 
-float get_file_size(string path) 
+
+float get_file_size_in_megabyte(string path)
 {
 	LPCTSTR file = path.c_str();
 
@@ -19,12 +22,11 @@ float get_file_size(string path)
 		OPEN_EXISTING,
 		FILE_FLAG_SEQUENTIAL_SCAN,
 		NULL);
-	if (hFile == INVALID_HANDLE_VALUE)
-		cout << "Не удалось открыть файл";
+	assert(hFile != INVALID_HANDLE_VALUE);
 
 	fileSize = GetFileSize(hFile, NULL);
-	if (fileSize == INVALID_FILE_SIZE)
-		cout << "Не удалось определить размер файла";
+
+	assert(fileSize != INVALID_FILE_SIZE);
 
 	CloseHandle(hFile);
 
@@ -33,7 +35,9 @@ float get_file_size(string path)
 
 bool is_image(string fileName)
 {
+
 	int i;
+	std::vector<int> v = { 0, 1, 2, 3, 4 };
 
 	if (!strrchr(fileName.c_str(), '.')) 
 	{
@@ -41,7 +45,7 @@ bool is_image(string fileName)
 	}
 	string expansionArray[] = { "jpg","jpeg","png","gif","bmp" };
 	
-	for (i = 0;i < 5;i++)
+	for (auto i : v)
 		if (fileName.substr(fileName.find_last_of(".") + 1) == expansionArray[i])
 			return true;
 	return false;
@@ -53,46 +57,46 @@ bool directory_exists(const char* FileName)
 	return (Code != -1) && (FILE_ATTRIBUTE_DIRECTORY & Code);
 }
 
-Files get_file_list(string & oldPath) 
+void get_image_list(Files &files, HANDLE &hFile, string &path, unsigned long &count_of_image, WIN32_FIND_DATA &fileData)
+{
+	files.files = new string[files.arrSize];
+	count_of_image = 0;
+	hFile = FindFirstFile(path.c_str(), &fileData);
+	do
+	{
+		if (!(fileData.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY))
+		{
+			if (is_image(fileData.cFileName)) {
+				files.files[count_of_image] = fileData.cFileName;
+				count_of_image++;
+			}
+		}
+	} while (FindNextFile(hFile, &fileData));
+	FindClose(hFile);
+}
+
+Files get_file_list(string & oldPath)
 {
 	string path = oldPath + string("*");
 	Files files;
 	files.path = oldPath;
-	unsigned long i = 0;
+	unsigned long count_of_image = 0;
 
 	WIN32_FIND_DATA fileData;
 	HANDLE hFile = FindFirstFile(path.c_str(), &fileData);
 	if (hFile != INVALID_HANDLE_VALUE)
 	{
-		do 
+		do
 		{
-			if (!(fileData.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY)) 
-			{
 				files.arrSize++;
 				if (strlen(fileData.cFileName) > files.nameSize)
 					files.nameSize = strlen(fileData.cFileName);
-			}
 
 		} while (FindNextFile(hFile, &fileData));
 
-		files.files = new string[files.arrSize];
-		i = 0;
-		hFile = FindFirstFile(path.c_str(), &fileData);
-		do
-		{
-			if (!(fileData.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY))
-			{
-				if (is_image(fileData.cFileName)) {
-					files.files[i] = fileData.cFileName;
-					i++;
-				}
-			}
-
-		}
-		while (FindNextFile(hFile, &fileData));
-		FindClose(hFile);
+		get_image_list(files, hFile, path, count_of_image, fileData);
 	}
-	files.arrSize = i;
+	files.arrSize = count_of_image;
 	return files;
 }
 
@@ -116,7 +120,7 @@ string init_picture(RenderWindow & window, Files files, Picture *pic, char direc
 		}
 		Image *image = new Image;
 		string path = files.path + files.files[pic->pictureNumber];
-		pic->size = get_file_size(path);
+		pic->size = get_file_size_in_megabyte(path);
 		if (pic->size > 10)
 		{
 			cout << "errorPath (too big size) with: \n" << files.path + files.files[pic->pictureNumber] << '\n';
@@ -415,7 +419,6 @@ void get_path(Sys & sys,int & argc, char* argv[]) {
 void checking_dir(Sys &sys, Files &files, RenderWindow &window, Picture &picture, int &argc, char* argv[])
 {
 	sys.dirPath = "C:/Image/";
-
 	get_path(sys, argc, argv);
 
 	files = get_file_list(sys.dirPath);
@@ -426,7 +429,8 @@ void checking_dir(Sys &sys, Files &files, RenderWindow &window, Picture &picture
 	if (files.arrSize > 0) {
 		window.setTitle(init_picture(window, files, &picture, 0, sys));
 	}
-	else if (!sys.error) {
+	else if (!sys.error) 
+	{
 		sys.error = true;
 		sys.errorLetter = "Dir hasn't images.";
 	}
@@ -466,7 +470,7 @@ void start_program(int argc, char* argv[])
 	RectangleShape fileSizeBg(Vector2f(100, 40));
 	fileSizeBg.setFillColor(Color(33, 150, 243, 0));
 
-	Text fileSizeText("unknow", font, 10);
+	Text fileSizeText("unknown", font, 10);
 	fileSizeText.setColor(Color(0, 0, 0));
 
 	Vector2f cursor;

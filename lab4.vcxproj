@@ -141,6 +141,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dirent.h" />
     <ClInclude Include="draw_viewer.h" />
     <ClInclude Include="init_struct.h" />
   </ItemGroup>

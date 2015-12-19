@@ -1,15 +1,30 @@
-﻿Сборка начата 15.12.2015 20:06:15.
+﻿Сборка начата 19.12.2015 13:15:29.
      1>Проект "C:\lab4\lab4\lab4.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\VS\VC\bin\CL.exe /c /I"C:\SFML-Visual_Studio2015RCx32\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt draw_text.cpp main.cpp
-         draw_text.cpp
-     1>c:\lab4\lab4\draw_text.cpp(26): warning C4244: =: преобразование "unsigned int" в "float", возможна потеря данных
-     1>c:\lab4\lab4\draw_text.cpp(30): warning C4244: =: преобразование "unsigned int" в "float", возможна потеря данных
-     1>c:\lab4\lab4\draw_text.cpp(35): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
-     1>c:\lab4\lab4\draw_text.cpp(40): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
-         Создание кода...
-         Пропуск... (изменения не обнаружены)
+         C:\Program Files (x86)\VS\VC\bin\CL.exe /c /I"C:\SFML-Visual_Studio2015RCx32\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
+     1>c:\lab4\lab4\draw_viewer.h(7): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(8): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(9): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(21): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(27): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(28): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\draw_viewer.h(28): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(33): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(39): warning C4101: i: неиспользованная локальная переменная
+     1>c:\lab4\lab4\main.cpp(110): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(111): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(177): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(219): warning C4305: инициализация: усечение из "double" к "float"
+     1>c:\lab4\lab4\main.cpp(244): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(371): warning C4551: в вызове функции отсутствует список аргументов
+     1>c:\lab4\lab4\main.cpp(388): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(389): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(445): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(467): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(468): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
+     1>c:\lab4\lab4\main.cpp(485): warning C4244: аргумент: преобразование "unsigned int" в "float", возможна потеря данных
        Link:
          C:\Program Files (x86)\VS\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\lab4\Debug\lab4.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SFML-Visual_Studio2015RCx32\lib" "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\lab4\Debug\lab4.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\lab4\Debug\lab4.lib" /MACHINE:X86 Debug\draw_text.obj
          Debug\main.obj
@@ -18,4 +33,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:01.18
+Затраченное время: 00:00:01.21
